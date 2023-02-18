@@ -8,3 +8,10 @@ The `.pmtiles` files were created by first running
 
 And then converting them with
 [go-pmtiles](https://github.com/protomaps/go-pmtiles)
+
+Run with 
+```
+npm run dev
+```
+
+And visit `localhost:3000`

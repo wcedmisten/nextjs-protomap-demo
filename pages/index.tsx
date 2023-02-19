@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import maplibregl from 'maplibre-gl';
 import * as pmtiles from "pmtiles";
-import layers from 'protomaps-themes-base';
+import layer from 'data/layers.json'
 
 const Map = () => {
   const mapContainer = useRef(null);
@@ -13,9 +13,6 @@ const Map = () => {
   const [lat] = useState(20.1683);
 
   const [zoom] = useState(2);
-
-  const layer = layers("protomaps", "dark")
-  console.log(layer)
 
   useEffect(() => {
     if (map.current) return;
@@ -26,13 +23,12 @@ const Map = () => {
     map.current = new maplibregl.Map({
       container: mapContainer.current,
       style: {
-        glyphs: 'https://cdn.protomaps.com/fonts/pbf/{fontstack}/{range}.pbf',
+        glyphs: '/glyphs/{fontstack}/{range}.pbf',
         version: 8,
         "sources": {
-          "protomaps": {
+          "openmaptiles": {
             "type": "vector",
-            "url": "pmtiles:///switzerland.pmtiles",
-            attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'
+            "url": "pmtiles:///switzerland.pmtiles"
           }
         },
         layers: layer

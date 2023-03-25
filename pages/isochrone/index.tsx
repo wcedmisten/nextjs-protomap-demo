@@ -1,10 +1,10 @@
 import Head from "next/head"
-import styles from "@/styles/Home.module.css"
+import styles from "@/styles/Isochrone.module.css"
 import { useEffect, useRef, useState } from "react"
 
 import maplibregl from "maplibre-gl";
 import * as pmtiles from "pmtiles";
-import layer from "data/isochrone_layers.json"
+import layer from "data/positron_style.json"
 
 
 // const [initialLon, initialLat] = [41.1533, 20.1683]
@@ -16,7 +16,7 @@ const Map = () => {
   const [lng] = useState(initialLon);
   const [lat] = useState(initialLat);
 
-  const [zoom] = useState(2);
+  const [zoom] = useState(6);
 
   useEffect(() => {
     if (map.current) return;
@@ -32,29 +32,51 @@ const Map = () => {
         "sources": {
           "openmaptiles": {
             "type": "vector",
-            "url": "pmtiles:///virginia.pmtiles"
+            "url": "pmtiles:///virginia-smaller.pmtiles"
           },
-          "isochrone": {
+          "isochrone_0": {
             "type": "geojson",
-            "data": "isochrone-polygon.json"
+            "data": "polygon_0.json",
+          },
+          "isochrone_1": {
+            "type": "geojson",
+            "data": "polygon_1.json"
+          },
+          "isochrone_2": {
+            "type": "geojson",
+            "data": "polygon_2.json"
+          },
+          "isochrone_3": {
+            "type": "geojson",
+            "data": "polygon_3.json"
           }
         },
         layers: layer
       },
       // style: "https://demotiles.maplibre.org/style.json",
       center: [lng, lat],
-      zoom: zoom
+      zoom: zoom,
+      customAttribution: "© OpenMapTiles © OpenStreetMap contributors"
     });
   });
 
   return (
     <div className="map-wrap">
       <div ref={mapContainer} className="map" />
+      <div id="state-legend" className="legend">
+        <h4>Driving Distance
+          to Nearest Hospital</h4>
+        <div className="legend-element"><span style={{ backgroundColor: "#fde725" }}></span>&lt; 10 minutes</div>
+        <div className="legend-element"><span style={{ backgroundColor: "#35b779" }}></span>&lt; 20 minutes</div>
+        <div className="legend-element"><span style={{ backgroundColor: "#31688e" }}></span>&lt; 30 minutes</div>
+        <div className="legend-element"><span style={{ backgroundColor: "#440154" }}></span>&lt; 40 minutes</div>
+      </div>
     </div>
   );
 }
 
-export default function Home() {
+
+export default function Isochrone() {
   return (
     <>
       <Head>

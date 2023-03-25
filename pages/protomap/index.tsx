@@ -1,5 +1,5 @@
 import Head from "next/head"
-import styles from "@/styles/Home.module.css"
+
 import { useEffect, useRef, useState } from "react"
 
 import maplibregl from "maplibre-gl";

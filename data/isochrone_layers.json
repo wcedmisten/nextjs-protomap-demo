@@ -1817,13 +1817,43 @@
         }
     },
     {
-        "id": "isochrone",
+        "id": "isochrone0",
         "type": "fill",
-        "source": "isochrone",
+        "source": "isochrone_0",
         "layout": {},
         "paint": {
-            "fill-color": "#088",
-            "fill-opacity": 0.5
+            "fill-color": "#a83c32",
+            "fill-opacity": 0.3
+        }
+    },
+    {
+        "id": "isochrone1",
+        "type": "fill",
+        "source": "isochrone_1",
+        "layout": {},
+        "paint": {
+            "fill-color": "#e68040",
+            "fill-opacity": 0.3
+        }
+    },
+    {
+        "id": "isochrone2",
+        "type": "fill",
+        "source": "isochrone_2",
+        "layout": {},
+        "paint": {
+            "fill-color": "#edcd2b",
+            "fill-opacity": 0.3
+        }
+    },
+    {
+        "id": "isochrone3",
+        "type": "fill",
+        "source": "isochrone_3",
+        "layout": {},
+        "paint": {
+            "fill-color": "#74e344",
+            "fill-opacity": 0.3
         }
     }
 ]

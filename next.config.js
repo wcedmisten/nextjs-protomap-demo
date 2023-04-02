@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/map-demo',
+  basePath: '/nextjs-protomap-demo',
 }
 
 module.exports = nextConfig

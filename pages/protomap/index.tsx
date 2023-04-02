@@ -23,12 +23,12 @@ const Map = () => {
     map.current = new maplibregl.Map({
       container: mapContainer.current as unknown as HTMLElement,
       style: {
-        glyphs: "/glyphs/{fontstack}/{range}.pbf",
+        glyphs: "/map-demo/glyphs/{fontstack}/{range}.pbf",
         version: 8,
         "sources": {
           "openmaptiles": {
             "type": "vector",
-            "url": "pmtiles:///switzerland.pmtiles"
+            "url": "pmtiles:///map-demo/switzerland.pmtiles"
           }
         },
         layers: layer as maplibregl.LayerSpecification[]

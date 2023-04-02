@@ -24,16 +24,16 @@ const Map = () => {
     map.current = new maplibregl.Map({
       container: mapContainer.current as unknown as HTMLElement,
       style: {
-        glyphs: "/glyphs/{fontstack}/{range}.pbf",
+        glyphs: "/map-demo/glyphs/{fontstack}/{range}.pbf",
         version: 8,
         "sources": {
           "openmaptiles": {
             "type": "vector",
-            "url": "pmtiles:///maryland/maryland.pmtiles"
+            "url": "pmtiles:///map-demo/maryland/maryland.pmtiles"
           },
           "isochrone": {
             "type": "vector",
-            "url": "pmtiles:///maryland_iso.pmtiles",
+            "url": "pmtiles:///map-demo/maryland_iso.pmtiles",
           },
         },
         layers: layer as maplibregl.LayerSpecification[]

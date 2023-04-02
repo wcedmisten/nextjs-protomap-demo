@@ -8,7 +8,7 @@ import layer from "data/layers.json"
 
 const Map = () => {
   const mapContainer = useRef(null);
-  const map = useRef(null);
+  const map = useRef<maplibregl.Map>();
   const [lng] = useState(41.1533);
   const [lat] = useState(20.1683);
 
@@ -21,7 +21,7 @@ const Map = () => {
     maplibregl.addProtocol("pmtiles", protocol.tile);
 
     map.current = new maplibregl.Map({
-      container: mapContainer.current,
+      container: mapContainer.current as unknown as HTMLElement,
       style: {
         glyphs: "/glyphs/{fontstack}/{range}.pbf",
         version: 8,
@@ -31,7 +31,7 @@ const Map = () => {
             "url": "pmtiles:///switzerland.pmtiles"
           }
         },
-        layers: layer
+        layers: layer as maplibregl.LayerSpecification[]
       },
       maxBounds: [            [
         3.215401694794508,

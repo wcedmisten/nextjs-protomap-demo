@@ -9,7 +9,7 @@ const [initialLon, initialLat] = [-76.5059133431, 37.6227077717]
 
 const Map = () => {
   const mapContainer = useRef(null);
-  const map = useRef(null);
+  const map = useRef<maplibregl.Map>();
   const [lng] = useState(initialLon);
   const [lat] = useState(initialLat);
 
@@ -22,7 +22,7 @@ const Map = () => {
     maplibregl.addProtocol("pmtiles", protocol.tile);
 
     map.current = new maplibregl.Map({
-      container: mapContainer.current,
+      container: mapContainer.current as unknown as HTMLElement,
       style: {
         glyphs: "/glyphs/{fontstack}/{range}.pbf",
         version: 8,
@@ -36,7 +36,7 @@ const Map = () => {
             "url": "pmtiles:///maryland_iso.pmtiles",
           },
         },
-        layers: layer
+        layers: layer as maplibregl.LayerSpecification[]
       },
       center: [lng, lat],
       zoom: zoom,

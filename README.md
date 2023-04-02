@@ -27,7 +27,13 @@ Run the project with:
 npm run dev
 ```
 
-And visit [http://localhost:3000/protomap](http://localhost:3000/protomap) to see the map.
+For a basic demo of using protomap tiles served as static assets, see:
+
+[http://localhost:3000/protomap](http://localhost:3000/protomap)
+
+For a demo of extra polygon layers of isochrones, see:
+
+[http://localhost:3000/isochrone](http://localhost:3000/isochrone)
 
 
 # Glyphs

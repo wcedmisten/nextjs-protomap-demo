@@ -33,7 +33,14 @@ const Map = () => {
         },
         layers: layer
       },
-      // style: "https://demotiles.maplibre.org/style.json",
+      maxBounds: [            [
+        3.215401694794508,
+        45.333823182878035
+      ], [
+        12.051810391300307,
+        48.11678780592885
+      ],],
+      minZoom: 5,
       center: [lng, lat],
       zoom: zoom
     });
@@ -55,7 +62,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main>
         <Map></Map>
       </main>
     </>

@@ -27,7 +27,7 @@ Run the project with:
 npm run dev
 ```
 
-And visit [http://localhost:3000](http://localhost:3000) to see the map.
+And visit [http://localhost:3000/protomap](http://localhost:3000/protomap) to see the map.
 
 
 # Glyphs
